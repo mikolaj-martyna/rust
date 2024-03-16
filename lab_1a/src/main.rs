@@ -15,6 +15,16 @@ fn days_in(month: i8, year: i16) -> i8 {
     }
 }
 
+// 3.
+fn to_fahrenheit(celsius: f32) -> f32 {
+    32.0 + (9.0/5.0)*celsius
+}
+
+// 4.
+fn to_celsius(fahrenheit: f32) -> f32 {
+    (fahrenheit - 32.0) * (5.0/9.0)
+}
+
 fn main() {
     // 1.
     let year = 2023;
@@ -24,4 +34,12 @@ fn main() {
     let month = 2;
     let year = 2024;
     println!("{} days in month {} year {}", days_in(month, year), month, year);
+
+    // 3.
+    let celsius = 22.3;
+    println!("{}*C is {}*F", celsius, to_fahrenheit(celsius));
+
+    // 4.
+    let fahrenheit = 72.14;
+    println!("{}*F is {}*C", fahrenheit, to_celsius(fahrenheit));
 }
