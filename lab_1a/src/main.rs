@@ -60,6 +60,28 @@ fn factorial(n: i8) -> i128 {
     factorial(n - 1) * n as i128
 }
 
+//  7.
+fn digits_from_end(mut number: i128) {
+    while number != 0 {
+        print!("{}", number % 10);
+        number /= 10;
+    }
+
+    println!();
+}
+
+// 8.
+fn sum_of_digits(mut number: i128) -> i128 {
+    let mut sum = 0;
+
+    while number != 0 {
+        sum += number % 10;
+        number /= 10;
+    }
+
+    sum
+}
+
 fn main() {
     // 1.
     let year = 2023;
@@ -99,4 +121,16 @@ fn main() {
     // 6.
     let n = 16;
     println!("Factorial of {} is {}", n, factorial(n));
+
+    // 7.
+    let number = 432891;
+    print!("Number {} printed from the end is ", number);
+    digits_from_end(number);
+
+
+    // 8.
+    let number = 12345;
+    println!("Sum of digits of {} is {}", number, sum_of_digits(number))
+
+
 }
