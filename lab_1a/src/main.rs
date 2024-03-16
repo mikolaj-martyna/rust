@@ -51,6 +51,15 @@ fn time_from_seconds(seconds: i32) -> [i8; 3] {
     [hours as i8, minutes as i8, (seconds % 60) as i8]
 }
 
+// 6.
+fn factorial(n: i8) -> i128 {
+    if n == 1 {
+        return 1i128
+    }
+
+    factorial(n - 1) * n as i128
+}
+
 fn main() {
     // 1.
     let year = 2023;
@@ -86,4 +95,8 @@ fn main() {
              hours_to, minutes_to, seconds_to,
              time_between[0], time_between[1], time_between[2]
     );
+
+    // 6.
+    let n = 16;
+    println!("Factorial of {} is {}", n, factorial(n));
 }
