@@ -17,12 +17,38 @@ fn days_in(month: i8, year: i16) -> i8 {
 
 // 3.
 fn to_fahrenheit(celsius: f32) -> f32 {
-    32.0 + (9.0/5.0)*celsius
+    32.0 + (9.0 / 5.0) * celsius
 }
 
 // 4.
 fn to_celsius(fahrenheit: f32) -> f32 {
-    (fahrenheit - 32.0) * (5.0/9.0)
+    (fahrenheit - 32.0) * (5.0 / 9.0)
+}
+
+// 5.
+fn time_between(hours_from: i8, minutes_from: i8, seconds_from: i8,
+                hours_to: i8, minutes_to: i8, seconds_to: i8) -> [i8; 3] {
+    let mut time_from = time_to_seconds(hours_from, minutes_from, seconds_from);
+    let mut time_to = time_to_seconds(hours_to, minutes_to, seconds_to);
+
+    if time_from > time_to {
+        let temp = time_from;
+        time_from = time_to;
+        time_to = temp;
+    }
+
+    time_from_seconds(time_to - time_from)
+}
+
+fn time_to_seconds(hours: i8, minutes: i8, seconds: i8) -> i32 {
+    hours as i32 * 3600 + minutes as i32 * 60 + seconds as i32
+}
+
+fn time_from_seconds(seconds: i32) -> [i8; 3] {
+    let hours = seconds / 3600;
+    let minutes = (seconds % 3600) / 60;
+
+    [hours as i8, minutes as i8, (seconds % 60) as i8]
 }
 
 fn main() {
@@ -42,4 +68,22 @@ fn main() {
     // 4.
     let fahrenheit = 72.14;
     println!("{}*F is {}*C", fahrenheit, to_celsius(fahrenheit));
+
+    // 5.
+    let hours_from = 14;
+    let minutes_from = 58;
+    let seconds_from = 14;
+
+    let hours_to = 17;
+    let minutes_to = 0;
+    let seconds_to = 9;
+
+    let time_between = time_between(hours_from, minutes_from, seconds_from,
+                                    hours_to, minutes_to, seconds_to);
+
+    println!("Time from {:0>2}:{:0>2}:{:0>2} to {:0>2}:{:0>2}:{:0>2} is {:0>2}:{:0>2}:{:0>2}",
+             hours_from, minutes_from, seconds_from,
+             hours_to, minutes_to, seconds_to,
+             time_between[0], time_between[1], time_between[2]
+    );
 }
