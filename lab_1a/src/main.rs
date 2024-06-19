@@ -60,6 +60,40 @@ fn factorial(n: i8) -> i128 {
     factorial(n - 1) * n as i128
 }
 
+fn factorial_while(n: i8) -> i128 {
+    if n <= 0 {
+        return 0;
+    }
+
+    let mut result: i128 = 1;
+    let mut current: i8 = 1;
+
+    while current <= n {
+        result *= current as i128;
+        current += 1;
+    }
+
+    result
+}
+
+fn factorial_loop(n: i8) -> i128 {
+    if n <= 0 {
+        return 0;
+    }
+
+    let mut result: i128 = 1;
+    let mut current: i8 = 1;
+
+    loop {
+        if current == n + 1 {
+            break result
+        }
+
+        result *= current as i128;
+        current += 1;
+    }
+}
+
 //  7.
 fn digits_from_end(mut number: i128) {
     while number != 0 {
@@ -119,8 +153,11 @@ fn main() {
     );
 
     // 6.
-    let n = 16;
-    println!("Factorial of {} is {}", n, factorial(n));
+    let n = 14;
+
+    println!("Factorial recursive of {} is {}", n, factorial(n));
+    println!("Factorial with while of {} is {}", n, factorial_while(n));
+    println!("Factorial with loop of {} is {}", n, factorial_loop(n));
 
     // 7.
     let number = 432891;
