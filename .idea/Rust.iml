@@ -5,9 +5,13 @@
       <sourceFolder url="file://$MODULE_DIR$/lab_1a/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lab_2a/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/kolokwium_2_prep/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kolokwium_3_prep/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kolokwium_3_prep/src/fraction/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/lab_1a/target" />
       <excludeFolder url="file://$MODULE_DIR$/lab_2a/target" />
       <excludeFolder url="file://$MODULE_DIR$/kolokwium_2_prep/target" />
+      <excludeFolder url="file://$MODULE_DIR$/kolokwium_3_prep/target" />
+      <excludeFolder url="file://$MODULE_DIR$/kolokwium_3_prep/src/fraction/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

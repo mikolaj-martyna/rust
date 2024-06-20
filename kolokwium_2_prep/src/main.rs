@@ -1,5 +1,3 @@
-use std::collections::{HashMap, HashSet};
-
 fn showcase(name_input: Option<String>, surname_input: Option<String>) -> String {
     let mut name;
     let mut surname;
